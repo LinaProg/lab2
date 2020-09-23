@@ -21,9 +21,5 @@ urlpatterns = [
     path('projects/<slug>/settings/update',views.UpdateParts.as_view()),
     path('projects/<slug>/comment',views.AddingComment.as_view()),
     path('projects/<slug>/lyrics',views.Lyrics.as_view()),
-    path('projects/<slug>/stk/add',views.AddSoundtrack.as_view()),
-    path('projects/<slug>/stk/edit/<pk>',views.EditSoundtrack.as_view()),
-    path('projects/<slug>/stk/delete/<pk>',views.DeleteSoundtrack.as_view()),
-        # path('projects/<slug>/<version>',views.ProjectPage.as_view())
-    # path('lol',views.MyView.as_view(),name='lol'),
+    path('projects/<slug>/stk/add',views.AddSoundtrack.as_view())
 ]

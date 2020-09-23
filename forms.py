@@ -28,13 +28,6 @@ class RegistrationForm(UserCreationForm):
 
         return user
 
-# class CreatingProject(forms.Form):
-
-#     class Meta:
-#         widgets = {
-#             'name' = forms.TextInput({'class': 'form-control'}),
-#         }
-
 
 class ProjectUpdate(forms.ModelForm):
     class Meta:
@@ -88,12 +81,12 @@ class EditSoundtrack(forms.ModelForm):
             'instrument': forms.Select(attrs={'class': 'form-control'}),
         }
 
-class savelyrics(forms.ModelForm):
+# class savelyrics(forms.ModelForm):
 
-    class Meta:
-        model = Project
-        fields = ('lyrics')
+#     class Meta:
+#         model = Project
+#         fields = ('lyrics')
 
-        fields = {
-            'lyrics': forms.TextInput(attrs={'class': 'form-control'})
-        }
+#         fields = {
+#             'lyrics': forms.TextInput(attrs={'class': 'form-control'})
+#         }
