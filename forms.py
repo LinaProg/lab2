@@ -90,3 +90,15 @@ class EditSoundtrack(forms.ModelForm):
 #         fields = {
 #             'lyrics': forms.TextInput(attrs={'class': 'form-control'})
 #         }
+
+class MyNewForm(forms.ModelForm):
+
+    class Meta: 
+        model = SuperAdmin
+        fields = ('name','surname','position')
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'surname': forms.TextInput(attrs={'class': 'form-control'}),
+            'position': forms.TextInput(attrs={'class': 'form-control'}),
+        }
