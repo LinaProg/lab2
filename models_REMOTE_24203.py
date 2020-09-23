@@ -30,6 +30,15 @@ class Profile(AbstractUser):
 
 
 
+class Role(models.Model):
+    role_name = models.CharField(max_length = 10,verbose_name="Название роли")
+
+    class Meta:
+        verbose_name = 'Роль'
+        verbose_name_plural = 'Роли'
+
+    def __str__(self):
+        return self.role_name
 
 class Genre(models.Model):
     role_name = models.CharField(max_length = 20,verbose_name="Название жанра")
@@ -83,15 +92,6 @@ class Comment(models.Model):
         verbose_name_plural = 'Комментарии'
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-class Instrument(models.Model):
-    name = models.CharField(max_length = 20,verbose_name="Инструмент")
-    tyoe = models.ForeignKey(InstrumentType, verbose_name = 'Вид', on_delete=models.CASCADE)
-=======
->>>>>>> admin_panel
-=======
->>>>>>> admin_panel
 
 
 
