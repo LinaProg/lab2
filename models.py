@@ -50,26 +50,26 @@ class Genre(models.Model):
     def __str__(self):
         return self.role_name
 
-class Project(models.Model):
-    project_name  = models.CharField(max_length = 20,verbose_name="Название проекта",unique=True)
-    creation = models.DateTimeField(verbose_name='Время создания',auto_now=True)
-    release = models.BooleanField(verbose_name='Релиз', default=False)
-    is_public = models.BooleanField(verbose_name='Публичный', default=True) 
-    genre = models.ForeignKey(Genre, verbose_name = 'Жанр', on_delete=models.SET_NULL, null=True)        
-    description = models.TextField(max_length=200,verbose_name='Описание')
-    slug = models.SlugField(null = True)
-    lyrics = models.TextField(max_length=3000,verbose_name='Слова песни', null=True, blank=True)
+# class Project(models.Model):
+#     project_name  = models.CharField(max_length = 20,verbose_name="Название проекта",unique=True)
+#     creation = models.DateTimeField(verbose_name='Время создания',auto_now=True)
+#     release = models.BooleanField(verbose_name='Релиз', default=False)
+#     is_public = models.BooleanField(verbose_name='Публичный', default=True) 
+#     genre = models.ForeignKey(Genre, verbose_name = 'Жанр', on_delete=models.SET_NULL, null=True)        
+#     description = models.TextField(max_length=200,verbose_name='Описание')
+#     slug = models.SlugField(null = True)
+#     lyrics = models.TextField(max_length=3000,verbose_name='Слова песни', null=True, blank=True)
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.project_name,True)
-        super(Project, self).save(*args, **kwargs)
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.project_name,True)
+#         super(Project, self).save(*args, **kwargs)
 
-    def __str__(self):
-        return self.project_name
+#     def __str__(self):
+#         return self.project_name
 
-    class Meta:
-        verbose_name = 'Проект'
-        verbose_name_plural = 'Проекты'
+#     class Meta:
+#         verbose_name = 'Проект'
+#         verbose_name_plural = 'Проекты'
 
 class Participants(models.Model):                                                          
     project_id = models.ForeignKey(Project, verbose_name = 'Проект', on_delete=models.CASCADE)
@@ -92,15 +92,7 @@ class Comment(models.Model):
         verbose_name_plural = 'Комментарии'
 
 
-class Instrument(models.Model):
-    name = models.CharField(max_length = 20,verbose_name="Инструмент")
 
-    class Meta:
-        verbose_name = 'Инструмент'
-        verbose_name_plural = 'Инструменты'
-
-    def __str__(self):
-        return self.name
 
 
 class Soundtrack(models.Model):
